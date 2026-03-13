@@ -148,7 +148,7 @@ export default function Onboard() {
   return (
     <div className="theme-light min-h-screen bg-background">
       {/* HEADER */}
-      <header className="bg-card border-b border-border sticky top-0 z-50 px-6">
+      <header className="bg-card border-b border-border sticky top-0 z-50 px-4 sm:px-6">
         <div className="max-w-[640px] mx-auto h-[60px] flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <div className="w-[34px] h-[34px] rounded-[9px] bg-primary flex items-center justify-center text-[15px] text-primary-foreground font-bold">⚡</div>
@@ -159,7 +159,7 @@ export default function Onboard() {
       </header>
 
       {/* HERO */}
-      <div className="bg-card border-b border-border py-9 px-6">
+      <div className="bg-card border-b border-border py-9 px-4 sm:px-6">
         <div className="max-w-[640px] mx-auto">
           <div className="inline-flex items-center gap-1.5 bg-primary/8 border border-primary/15 rounded-full px-3 py-1 text-xs font-medium text-primary mb-3.5">
             <span>👋</span> Welcome, {clientName}
@@ -171,7 +171,7 @@ export default function Onboard() {
             Please complete the items below. Your progress is saved automatically.
           </p>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 flex-wrap">
             <div className="flex-1 h-2.5 bg-secondary rounded-full overflow-hidden">
               <div className="h-full rounded-full bg-primary transition-all duration-500" style={{ width: `${pct}%` }} />
             </div>
@@ -181,7 +181,7 @@ export default function Onboard() {
       </div>
 
       {/* CHECKLIST */}
-      <div className="max-w-[640px] mx-auto px-6 py-8 pb-16">
+      <div className="max-w-[640px] mx-auto px-4 sm:px-6 py-8 pb-16">
         <div className="space-y-4">
           {items.map((item, i) => {
             const resp = responses[item.id] || { value: "", file_url: "", completed: false };
@@ -195,7 +195,7 @@ export default function Onboard() {
                   resp.completed ? "border-primary/30 bg-primary/[0.02]" : "border-border"
                 }`}
               >
-                <div className="flex items-start gap-3">
+                <div className="flex flex-col sm:flex-row sm:items-start gap-3">
                   <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 mt-0.5 transition-all ${
                     resp.completed ? "bg-primary border-primary text-primary-foreground" : "border-border"
                   }`}>
